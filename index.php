@@ -17,51 +17,51 @@
 <body>
 <div class="container">
         <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-      <h2>Data <b>Produk</b></h2>
-     </div>
-     <div class="col-sm-6">
-      <a href="./form-input.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Produk</span></a>   
-     </div>
+                <div class="table-title">
+                        <div class="row">
+                                <div class="col-sm-6">
+                                        <h2>Data <b>Produk</b></h2>
+                                </div>
+                                <div class="col-sm-6">
+                                        <a href="./form-input.php" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Produk</span></a>   
+                                </div>
+                        </div>
                 </div>
-            </div>
-            <table class="table table-striped table-hover table-bordered">
-            <center>
-                <thead class="bg-primary">
-                    <tr>
-                        <th class="text-center">No</th>
-                        <th class="text-center">Nama Produk</th>
-                        <th class="text-center">Keterangan</th>
-                        <th class="text-center">Harga</th>
-                        <th class="text-center">Jumlah</th>
-                        <th class="text-center">Aksi</th>
-                    </tr>
-                </thead>
-            </center>
-                <tbody class="text-center">
-                    <tr>
-                        <?php
-                        include 'koneksi.php';
-                        $produk = mysqli_query($koneksi, "SELECT * from produk");
-                        $no = 1;
-                        foreach ($produk as $row) {
-                            echo "<tr>
-                            <td>$no</td>
-                            <td>" . $row['nama_produk'] . "</td>
-                            <td>" . $row['keterangan'] . "</td>
-                            <td>" . $row['harga'] . "</td>
-                            <td>" . $row['jumlah'] . "</td>
-                            <td>
-                                <a href='form-edit.php?id_produk=$row[id_produk]' class='edit' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
-                                <a href='delete.php?id_produk=$row[id_produk]' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a></td>
-                            </tr>";
-                            $no++;
-                        }
-                        ?>
-                    </tr>
-                </tbody>
-            </table>
-</body>
-</html>                                                                    
+                <table class="table table-striped table-hover table-bordered">
+                        <center>
+                                <thead class="bg-primary">
+                                        <tr>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">Nama Produk</th>
+                                                <th class="text-center">Keterangan</th>
+                                                <th class="text-center">Harga</th>
+                                                <th class="text-center">Jumlah</th>
+                                                <th class="text-center">Aksi</th>
+                                        </tr>
+                                </thead>
+                        </center>
+                        <tbody class="text-center">
+                                <tr>
+                                        <?php
+                                        include 'koneksi.php';
+                                        $produk = mysqli_query($koneksi, "SELECT * from produk");
+                                        $no = 1;
+                                        foreach ($produk as $row) {
+                                                echo "<tr>
+                                                <td>$no</td>
+                                                <td>" . $row['nama_produk'] . "</td>
+                                                <td>" . $row['keterangan'] . "</td>
+                                                <td>" . $row['harga'] . "</td>
+                                                <td>" . $row['jumlah'] . "</td>
+                                                <td>
+                                                <a href='form-edit.php?id_produk=$row[id_produk]' class='edit' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
+                                                <a href='delete.php?id_produk=$row[id_produk]' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a></td>
+                                                </tr>";
+                                                $no++;
+                                        }
+                                        ?>
+                                </tr>
+                        </tbody>
+                </table>
+                </body>
+        </html>                                                                    
